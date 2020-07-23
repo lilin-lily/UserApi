@@ -1,4 +1,4 @@
-package com.cases;
+package com.cases;//�����
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -47,7 +47,7 @@ public class Login {
         System.out.println(UserModel.toString());
         //存放返回结果
         String result;
-        //发请求，取结果
+        //发请求，取结�?
         result = getResult(UserModel);
         System.out.println(result);
         Thread.sleep(2000);
@@ -60,15 +60,15 @@ public class Login {
         TestConfig.userId = getJsonDataValue(result, "data", "userId");
     }
 
-    @Test(description = "手机号登录",enabled = true)
+    @Test(description = "手机号登�?,enabled = true)
     public void loginPho() throws IOException, InterruptedException {
         SqlSession session = DatabaseUtil.getSqlSession();
-        //获取表中的第2条数据
+        //获取表中的第2条数�?
         User UserModel = session.selectOne("UserModel", 2);
         System.out.println(UserModel.toString());
         //存放返回结果
         String result;
-        //发请求，取结果
+        //发请求，取结�?
         result = getResult(UserModel);
         System.out.println(result);
         Thread.sleep(2000);
@@ -81,12 +81,12 @@ public class Login {
     @Test(description = "停用用户登录",enabled = true)
     public void loginFalse() throws IOException, InterruptedException {
         SqlSession session = DatabaseUtil.getSqlSession();
-        //获取表中的第3条数据
+        //获取表中的第3条数�?
         User UserModel = session.selectOne("UserModel", 3);
         System.out.println(UserModel.toString());
         //存放返回结果
         String result;
-        //发请求，取结果
+        //发请求，取结�?
         result = getResult(UserModel);
         System.out.println(result);
         Thread.sleep(2000);
@@ -104,7 +104,7 @@ public class Login {
         System.out.println(UserModel.toString());
         //存放返回结果
         String result;
-        //发请求，取结果
+        //发请求，取结�?
         result = getResult(UserModel);
         System.out.println(result);
         Thread.sleep(2000);
@@ -121,12 +121,12 @@ public class Login {
             param.put("password", UserModel.getPassword());
             param.put("service", " ");
             //param.put("expected",UserModel.getExpected());
-            //设置请求头信息
+            //设置请求头信�?
             post.setHeader("Content-type", "application/json");
             post.setHeader("appid", "8cg78c041b2b28c734c3e5b7534cbb8p");
             String ts = getTs();
             post.setHeader("sign", makeSign("b774cfe9fc8776b961a650df3efb3mf3", "/external/api/user/request_ticket", ts));
-            //时间戳
+            //时间�?
             post.setHeader("ts", ts);
             StringEntity entity = new StringEntity(param.toString(), "utf-8");
             post.setEntity(entity);
