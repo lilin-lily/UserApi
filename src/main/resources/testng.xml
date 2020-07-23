@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="app用户模块">
+
+    <test name="app用户模块">
+         <classes >
+             <class name="com.cases.Login">
+                 <methods>
+                     <include name="loginPho"/>
+                     <include name="loginFalse"/>
+                     <include name="loginFalsepassword"/>
+                     <include name="loginTrue"/>
+                 </methods>
+             </class>
+             <class name="com.cases.UserRoleEnt">
+                 <methods>
+                     <include name="getUserRoleEnt"/>
+                 </methods>
+             </class>
+             <class name="com.cases.QueryUsers">
+                 <methods>
+                     <include name="queryUsersEmails"/>
+                     <include name="queryUsersIds"/>
+                     <include name="queryUsersPhones"/>
+                 </methods>
+             </class>
+         </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.config.ExtentTestNGReporterListener" />
+    </listeners>
+
+</suite>
